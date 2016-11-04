@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 @ToString
 @Entity
-@Table(name = "PERMISSION")
+@Table(name = "PERMISSIONS")
 public class Permission implements Serializable, GrantedAuthority {
 
     @Getter

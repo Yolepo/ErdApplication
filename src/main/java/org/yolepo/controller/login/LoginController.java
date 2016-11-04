@@ -1,11 +1,11 @@
 package org.yolepo.controller.login;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by mjali on 04/11/2016.
  */
-@Controller
+@RestController
 public class LoginController {
 
 }
