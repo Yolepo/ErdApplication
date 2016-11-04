@@ -28,13 +28,11 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter
     @Setter
     @Size(min = 4, message = "user.username.size")
     @Column(unique = true)
     private String username;
 
-    @Getter
     @NotNull
     @NotEmpty(message = "user.password.empty")
     @Size(min = 6, message = "user.password.size")
