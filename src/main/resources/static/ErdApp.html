@@ -9,8 +9,17 @@
     <script src="/webjars/angularjs/1.5.8/angular.js"></script>
     <script src="/webjars/angularjs/1.5.8/angular-resource.js"></script>
     <script src="/webjars/angularjs/1.5.8/angular-route.js"></script>
-
-    <link rel="stylesheet" href="/css/app.css">
+    <script src="/webjars/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="/webjars/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="/webjars/angularjs/1.5.8/angular-touch.js"></script>
+    <script src="/webjars/angular-cookies/1.4.5/angular-cookies.js"></script>
+    <script src="/webjars/angular-translate/2.11.0/angular-translate.js"></script>
+    <script src="/webjars/angular-dynamic-locale/0.1.32/tmhDynamicLocale.min.js"></script>
+    <script src="/webjars/angular-translate-handler-log/2.4.2/angular-translate-handler-log.min.js"></script>
+    <script src="/webjars/angular-translate-loader-static-files/2.6.1/angular-translate-loader-static-files.min.js"></script>
+    <script src="/webjars/angular-translate-storage-local/2.10.0/angular-translate-storage-local.min.js"></script>
+    <script src="/webjars/angular-translate-storage-cookie/2.5.2/angular-translate-storage-cookie.min.js"></script>
+    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.css">
     <script src="/webjars/jquery/2.2.4/jquery.min.js"></script>
     <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
@@ -39,19 +48,28 @@
         </div>
         <div class="collapse navbar-collapse" id="navToCollapse">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="#/">Fil d'actu</a></li>
-                <li><a href="#/">Réserver</a></li>
+                <li><a href="#/">{{"main.menu.accueil" | translate}}</a></li>
+                <li><a href="#/">{{"main.menu.reserver" | translate}}</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/login">login</a></li>
-                <li ng-show="authenticated"><a href="" ng-click="logout()"><i
-                        class="glyphicon glyphicon-log-out"></i></a></li>
-            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username"
+                           placeholder="{{'main.menu.identifiant' | translate}}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="password"
+                           placeholder="{{'main.menu.password' | translate}}">
+                </div>
+                <button type="submit" class="btn btn-default">{{'main.menu.connect' | translate}}</button>
+            </form>
         </div>
     </div>
 </nav>
-</div>
+<div ng-translate-language-select></div>
+
 <div ng-view class="container-fluid"></div>
-<script src="/js/app.js"></script>
+<script src="js/app.js"></script>
+<script src="js/services/LocaleService.js"></script>
+<script src="js/directives/LanguageSelectDirective.js"></script>
 </body>
 </html>

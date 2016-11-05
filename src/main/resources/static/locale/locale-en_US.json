@@ -1,0 +1,8 @@
+{
+  "main.menu.accueil": "Home",
+  "main.menu.reserver": "Book",
+  "main.menu.identifiant": "Username",
+  "main.menu.password": "Password",
+  "main.menu.connect": "Log in",
+  "directives.language-select.Language": "Languages : "
+}
