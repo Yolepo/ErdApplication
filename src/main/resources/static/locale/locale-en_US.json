@@ -1,8 +1,12 @@
 {
   "main.menu.accueil": "Home",
-  "main.menu.reserver": "Book",
-  "main.menu.identifiant": "Username",
-  "main.menu.password": "Password",
-  "main.menu.connect": "Log in",
-  "directives.language-select.Language": "Languages : "
+  "main.menu.menu1": "menu1",
+  "main.loginForm.resterlog": "Keep me log in",
+  "main.loginForm.motdepasseoublier": "Forgot password ?",
+  "main.loginForm.seconnecter": "Sign in",
+  "main.loginForm.placeholdermdp": "Password",
+  "main.loginForm.placeholderidentifiant": "Login",
+  "main.loginForm.identifiant": "Login",
+  "main.loginForm.menu": "Log in",
+  "directives.language-select.Language": "Languages "
 }

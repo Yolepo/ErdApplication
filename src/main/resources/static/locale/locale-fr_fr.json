@@ -1,8 +1,12 @@
 {
   "main.menu.accueil": "Accueil",
-  "main.menu.identifiant": "Identifiant",
-  "main.menu.password": "Mot de passe",
-  "main.menu.connect": "Connexion",
-  "main.menu.reserver": "Réserver",
-  "directives.language-select.Language": "Langues : "
+  "main.menu.menu1": "menu1",
+  "main.loginForm.resterlog": "Rester connecté.",
+  "main.loginForm.motdepasseoublier": "Mot de passe oublié ?",
+  "main.loginForm.seconnecter": "Se connecter",
+  "main.loginForm.placeholdermdp": "Mot de passe",
+  "main.loginForm.placeholderidentifiant": "Identifiant",
+  "main.loginForm.identifiant": "Identifiant",
+  "main.loginForm.menu": "Connection",
+  "directives.language-select.Language": "Langues "
 }

@@ -3,10 +3,8 @@
  */
 angular.module('app').service('LocaleService', function ($translate, LOCALES, $rootScope, tmhDynamicLocale) {
     'use strict';
-    // PREPARING LOCALES INFO
     var localesObj = LOCALES.locales;
 
-    // locales and locales display names
     var _LOCALES = Object.keys(localesObj);
     if (!_LOCALES || _LOCALES.length === 0) {
         console.error('There are no _LOCALES provided');
@@ -16,10 +14,8 @@ angular.module('app').service('LocaleService', function ($translate, LOCALES, $r
         _LOCALES_DISPLAY_NAMES.push(localesObj[locale]);
     });
 
-    // STORING CURRENT LOCALE
-    var currentLocale = $translate.proposedLanguage();// because of async loading
+    var currentLocale = $translate.proposedLanguage();
 
-    // METHODS
     var checkLocaleIsValid = function (locale) {
         return _LOCALES.indexOf(locale) !== -1;
     };
@@ -29,18 +25,14 @@ angular.module('app').service('LocaleService', function ($translate, LOCALES, $r
             console.error('Locale name "' + locale + '" is invalid');
             return;
         }
-        currentLocale = locale;// updating current locale
+        currentLocale = locale;
 
-        // asking angular-translate to load and apply proper translations
         $translate.use(locale);
     };
 
-    // EVENTS
-    // on successful applying translations by angular-translate
     $rootScope.$on('$translateChangeSuccess', function (event, data) {
-        document.documentElement.setAttribute('lang', data.language);// sets "lang" attribute to html
+        document.documentElement.setAttribute('lang', data.language);
 
-        // asking angular-dynamic-locale to load and apply proper AngularJS $locale setting
         tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));
     });
 
@@ -51,7 +43,7 @@ angular.module('app').service('LocaleService', function ($translate, LOCALES, $r
         setLocaleByDisplayName: function (localeDisplayName) {
             setLocale(
                 _LOCALES[
-                    _LOCALES_DISPLAY_NAMES.indexOf(localeDisplayName)// get locale index
+                    _LOCALES_DISPLAY_NAMES.indexOf(localeDisplayName)
                     ]
             );
         },

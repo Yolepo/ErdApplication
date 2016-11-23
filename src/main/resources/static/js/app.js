@@ -2,7 +2,7 @@
  * Created by mjali on 03/11/2016.
  */
 var app = angular.module('app', ['ngRoute', 'ngResource', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngLocale', 'pascalprecht.translate', 'tmh.dynamicLocale']);
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $httpProvider) {
     $routeProvider
         .when('/users', {
             templateUrl: '/views/users.html',
@@ -15,6 +15,7 @@ app.config(function ($routeProvider) {
         .otherwise(
             {redirectTo: '/'}
         );
+    $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 }).constant('LOCALES', {
     'locales': {
         'fr_fr': 'Français',
